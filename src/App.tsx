@@ -153,7 +153,7 @@ interface TimeLeft {
 }
 
 function CountdownSection() {
-  const targetDate = React.useMemo(() => new Date('2026-08-06T16:00:00').getTime(), []);
+  const targetDate = React.useMemo(() => new Date('2026-09-25T18:00:00').getTime(), []);
 
   const getTimeLeft = (): TimeLeft => {
     const now = new Date().getTime();
@@ -188,7 +188,7 @@ function CountdownSection() {
     { label: 'Seconds', value: timeLeft.seconds },
   ];
 
-  const floatingHearts = React.useMemo(() => 
+  const floatingHearts = React.useMemo(() =>
     Array.from({ length: 12 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
@@ -209,24 +209,24 @@ function CountdownSection() {
         <motion.div
           animate={{ x: [0, 60, 0], y: [0, 30, 0], scale: [1, 1.12, 1] }}
           transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -left-[12%] top-[-8%] h-[50vw] w-[50vw] rounded-full bg-gradient-to-br from-[#ECE8DA] to-[#DFD9C4] opacity-70 blur-[110px]"
+          className="absolute -left-[12%] top-[-8%] h-[50vw] w-[50vw] rounded-full bg-gradient-to-br from-theme-100 to-theme-200 opacity-70 blur-[110px]"
         />
         <motion.div
           animate={{ x: [0, -45, 0], y: [0, -45, 0], scale: [1, 1.18, 1] }}
           transition={{ duration: 19, repeat: Infinity, ease: 'easeInOut', delay: 1.8 }}
-          className="absolute -right-[10%] top-[32%] h-[42vw] w-[42vw] rounded-full bg-gradient-to-tl from-[#DFD9C4] to-[#FCFBF7] opacity-60 blur-[110px]"
+          className="absolute -right-[10%] top-[32%] h-[42vw] w-[42vw] rounded-full bg-gradient-to-tl from-theme-200 to-theme-50 opacity-60 blur-[110px]"
         />
         <motion.div
           animate={{ x: [0, 24, 0], y: [0, -35, 0] }}
           transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-          className="absolute bottom-[-20%] left-[18%] h-[44vw] w-[44vw] rounded-full bg-[#F7F5EE] opacity-45 blur-[110px]"
+          className="absolute bottom-[-20%] left-[18%] h-[44vw] w-[44vw] rounded-full bg-theme-100 opacity-45 blur-[110px]"
         />
 
         <div
           className="absolute inset-0 opacity-[0.18]"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 12px 12px, rgba(183,168,128,0.2) 1px, transparent 1px)',
+              'radial-gradient(circle at 12px 12px, rgba(210,180,185,0.2) 1px, transparent 1px)',
             backgroundSize: '36px 36px',
           }}
         />
@@ -237,7 +237,7 @@ function CountdownSection() {
         {floatingHearts.map((heart) => (
           <motion.div
             key={heart.id}
-            className="absolute text-[#B7A880]/30"
+            className="absolute text-theme-400/30"
             style={{ left: heart.left, top: heart.top }}
             animate={{
               y: [0, -90, 0],
@@ -268,17 +268,17 @@ function CountdownSection() {
         >
           <motion.div
             whileHover={{ scale: 1.04 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#CBBF9F]/45 bg-white/70 px-5 py-2.5 shadow-[0_10px_30px_rgba(183,168,128,0.1)] backdrop-blur-md"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-theme-300 bg-white/70 px-5 py-2.5 shadow-[0_10px_30px_rgba(210,180,185,0.1)] backdrop-blur-md"
           >
-            <Sparkles className="h-4 w-4 text-[#9A8A60]" />
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#9A8A60] sm:text-sm">
+            <Sparkles className="h-4 w-4 text-theme-600" />
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-theme-600 sm:text-sm">
               The Big Day Approaches
             </span>
-            <Sparkles className="h-4 w-4 text-[#9A8A60]" />
+            <Sparkles className="h-4 w-4 text-theme-600" />
           </motion.div>
 
-          <h2 className="font-serif text-4xl font-medium tracking-tight text-[#3A3220] sm:text-5xl md:text-7xl">
-            Counting Down to <span className="relative inline-block text-[#9A8A60] font-playball italic lowercase tracking-normal">
+          <h2 className="font-serif text-4xl font-medium tracking-tight text-theme-900 sm:text-5xl md:text-7xl">
+            Counting Down to <span className="relative inline-block text-theme-500 font-playball italic lowercase tracking-normal">
               Forever
               <motion.svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full"
                 viewBox="0 0 100 20" preserveAspectRatio="none"
@@ -290,7 +290,7 @@ function CountdownSection() {
                 <motion.path
                   d="M0 10 Q 25 20, 50 10 T 100 10"
                   fill="none"
-                  stroke="#CBBF9F"
+                  stroke="#D2B4B9"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -298,70 +298,70 @@ function CountdownSection() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#7A6C48] sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-theme-700 sm:text-lg">
             Every second brings us closer to our blessed wedding day. We cannot wait to celebrate this grace-filled moment with you.
           </p>
         </motion.div>
 
-        <div className="rounded-[2rem] border border-[#ECE8DA]/45 bg-white/55 p-4 shadow-[0_20px_70px_rgba(183,168,128,0.12)] backdrop-blur-xl sm:p-6 md:p-8">
+        <div className="rounded-[2rem] border border-theme-200/45 bg-white/55 p-4 shadow-[0_20px_70px_rgba(210,180,185,0.12)] backdrop-blur-xl sm:p-6 md:p-8">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
-          {countdownItems.map((item, index) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: 0.15 + index * 0.1,
-                type: "spring",
-                bounce: 0.35
-              }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative"
-            >
-              <div className="relative overflow-hidden rounded-[1.8rem] border border-[#ECE8DA] bg-gradient-to-br from-white/95 to-[#F7F5EE]/90 shadow-[0_12px_30px_rgba(183,168,128,0.08)] transition-all duration-300 group-hover:shadow-[0_20px_45px_rgba(183,168,128,0.15)] p-5 md:p-7">
-                <div className="absolute inset-0 opacity-[0.15]"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(rgba(183,168,128,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(183,168,128,0.2) 1px, transparent 1px)',
-                    backgroundSize: '24px 24px',
-                  }}
-                />
+            {countdownItems.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.15 + index * 0.1,
+                  type: "spring",
+                  bounce: 0.35
+                }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative"
+              >
+                <div className="relative overflow-hidden rounded-[1.8rem] border border-theme-100 bg-gradient-to-br from-white/95 to-theme-50/90 shadow-[0_12px_30px_rgba(210,180,185,0.08)] transition-all duration-300 group-hover:shadow-[0_20px_45px_rgba(210,180,185,0.15)] p-5 md:p-7">
+                  <div className="absolute inset-0 opacity-[0.15]"
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(rgba(210,180,185,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(210,180,185,0.2) 1px, transparent 1px)',
+                      backgroundSize: '24px 24px',
+                    }}
+                  />
 
-                <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full border border-[#CBBF9F]/40" />
-                <div className="absolute -left-6 -bottom-6 h-16 w-16 rounded-full border border-[#CBBF9F]/25" />
+                  <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full border border-theme-300/40" />
+                  <div className="absolute -left-6 -bottom-6 h-16 w-16 rounded-full border border-theme-300/25" />
 
-                <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                  <div className="relative flex h-[64px] w-full items-center justify-center overflow-hidden sm:h-[78px] md:h-[96px]">
-                    <AnimatePresence mode="popLayout">
-                      <motion.span
-                        key={item.value}
-                        initial={{ y: 40, opacity: 0, scale: 0.65 }}
-                        animate={{ y: 0, opacity: 1, scale: 1 }}
-                        exit={{ y: -40, opacity: 0, scale: 0.65 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 370,
-                          damping: 24,
-                          mass: 1
-                        }}
-                        className="absolute font-serif text-5xl font-semibold text-[#3A3220] drop-shadow-[0_2px_8px_rgba(183,168,128,0.15)] sm:text-6xl md:text-7xl"
-                      >
-                        {String(item.value).padStart(2, '0')}
-                      </motion.span>
-                    </AnimatePresence>
-                  </div>
+                  <div className="relative z-10 flex flex-col items-center justify-center text-center">
+                    <div className="relative flex h-[64px] w-full items-center justify-center overflow-hidden sm:h-[78px] md:h-[96px]">
+                      <AnimatePresence mode="popLayout">
+                        <motion.span
+                          key={item.value}
+                          initial={{ y: 40, opacity: 0, scale: 0.65 }}
+                          animate={{ y: 0, opacity: 1, scale: 1 }}
+                          exit={{ y: -40, opacity: 0, scale: 0.65 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 370,
+                            damping: 24,
+                            mass: 1
+                          }}
+                          className="absolute font-serif text-5xl font-semibold text-theme-900 drop-shadow-[0_2px_8px_rgba(210,180,185,0.15)] sm:text-6xl md:text-7xl"
+                        >
+                          {String(item.value).padStart(2, '0')}
+                        </motion.span>
+                      </AnimatePresence>
+                    </div>
 
-                  <div className="mt-3 rounded-full border border-[#ECE8DA] bg-white/75 px-3 py-1.5 shadow-sm md:mt-5">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9A8A60] md:text-xs">
-                      {item.label}
-                    </p>
+                    <div className="mt-3 rounded-full border border-theme-200 bg-white/75 px-3 py-1.5 shadow-sm md:mt-5">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-theme-600 md:text-xs">
+                        {item.label}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -372,10 +372,10 @@ function CountdownSection() {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <div className="flex items-center gap-3 text-[#B7A880]">
+          <div className="flex items-center gap-3 text-theme-400">
             <Stars size={14} className="animate-pulse" />
             <Heart size={15} className="animate-bounce" fill="currentColor" />
-            <span className="font-serif italic text-lg text-[#7A6C48] sm:text-xl">
+            <span className="font-serif italic text-lg text-theme-700 sm:text-xl">
               Can't wait to see you there!
             </span>
             <Heart size={15} className="animate-bounce" fill="currentColor" style={{ animationDelay: '200ms' }} />
@@ -498,16 +498,16 @@ function StorySection() {
           className="text-center mb-10 md:mb-12 flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border-2 border-white shadow-md rounded-full px-5 py-2 mb-5">
-            <Heart className="w-4 h-4 text-[#B7A880] fill-[#B7A880]" />
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#B7A880]">Our Love Story</span>
-            <Heart className="w-4 h-4 text-[#B7A880] fill-[#B7A880]" />
+            <Heart className="w-4 h-4 text-theme-400 fill-theme-400" />
+            <span className="text-xs font-bold uppercase tracking-[0.22em] text-theme-400">Our Love Story</span>
+            <Heart className="w-4 h-4 text-theme-400 fill-theme-400" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#3A3220] leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-theme-900 leading-tight">
             Written in the{' '}
-            <span className="italic text-[#9A8A60] relative inline-block font-playball">
+            <span className="italic text-theme-600 relative inline-block font-playball">
               Stars
               <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 8" preserveAspectRatio="none">
-                <path d="M0 6 Q25 2 50 6 Q75 10 100 6" stroke="#CBBF9F" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                <path d="M0 6 Q25 2 50 6 Q75 10 100 6" stroke="#D2B4B9" strokeWidth="2.5" fill="none" strokeLinecap="round" />
               </svg>
             </span>
           </h2>
@@ -535,11 +535,11 @@ function StorySection() {
               >
                 <div
                   className="w-2 h-2 rounded-full shrink-0 transition-all"
-                  style={{ backgroundColor: active === i ? s.color : '#DFD9C4' }}
+                  style={{ backgroundColor: active === i ? s.color : '#D2B4B9' }}
                 />
                 <div>
-                  <p className="text-[9px] font-bold uppercase tracking-wider text-[#B7A880]">{s.chapter}</p>
-                  <p className={`text-[11px] font-semibold leading-tight transition-colors ${active === i ? 'text-[#3A3220]' : 'text-[#7A6C48]'}`}>
+                  <p className="text-[9px] font-bold uppercase tracking-wider text-theme-400">{s.chapter}</p>
+                  <p className={`text-[11px] font-semibold leading-tight transition-colors ${active === i ? 'text-theme-900' : 'text-theme-600'}`}>
                     {s.title}
                   </p>
                 </div>
@@ -548,7 +548,7 @@ function StorySection() {
           </div>
 
           {/* Center: Main Story Card */}
-          <div className="relative flex-1 overflow-hidden rounded-[2rem] md:rounded-[2.5rem] bg-white shadow-[0_20px_60px_rgba(183,168,128,0.12)] border-2 border-white min-h-[340px] md:min-h-[380px]">
+          <div className="relative flex-1 overflow-hidden rounded-[2rem] md:rounded-[2.5rem] bg-white shadow-[0_20px_60px_rgba(210,180,185,0.12)] border-2 border-white min-h-[340px] md:min-h-[380px]">
 
             {/* Gradient layer behind content */}
             <AnimatePresence custom={dir} mode="wait">
@@ -580,9 +580,9 @@ function StorySection() {
                   {/* Top row */}
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#B7A880]">{item.chapter}</span>
-                      <h3 className="font-cinzel text-2xl md:text-3xl text-[#3A3220] mt-1 leading-tight">{item.title}</h3>
-                      <p className="text-sm font-semibold text-[#7A6C48] mt-1">{item.subtitle}</p>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-theme-400">{item.chapter}</span>
+                      <h3 className="font-cinzel text-2xl md:text-3xl text-theme-900 mt-1 leading-tight">{item.title}</h3>
+                      <p className="text-sm font-semibold text-theme-600 mt-1">{item.subtitle}</p>
                     </div>
                     {/* Icon bubble */}
                     <div
@@ -594,7 +594,7 @@ function StorySection() {
                   </div>
 
                   {/* Story text */}
-                  <p className="text-[#5A4F35] text-base md:text-lg leading-relaxed font-medium flex-1 flex items-center">
+                  <p className="text-theme-700 text-base md:text-lg leading-relaxed font-medium flex-1 flex items-center">
                     {item.content}
                   </p>
 
@@ -612,7 +612,7 @@ function StorySection() {
                             style={{
                               width: active === i ? 24 : 8,
                               height: 8,
-                              backgroundColor: active === i ? item.color : '#ECE8DA',
+                              backgroundColor: active === i ? item.color : '#eee0e3',
                             }}
                           />
                         </button>
@@ -636,13 +636,13 @@ function StorySection() {
               onClick={prev}
               className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 bg-white/80 hover:bg-white backdrop-blur-sm rounded-full items-center justify-center shadow-md border border-white/80 transition-all hover:scale-110"
             >
-              <ChevronLeft className="w-5 h-5 text-[#3A3220]" />
+              <ChevronLeft className="w-5 h-5 text-theme-900" />
             </button>
             <button
               onClick={next}
               className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 bg-white/80 hover:bg-white backdrop-blur-sm rounded-full items-center justify-center shadow-md border border-white/80 transition-all hover:scale-110"
             >
-              <ChevronRight className="w-5 h-5 text-[#3A3220]" />
+              <ChevronRight className="w-5 h-5 text-theme-900" />
             </button>
           </div>
 
@@ -670,7 +670,7 @@ function StorySection() {
                   <p className="text-3xl font-serif font-bold animate-pulse" style={{ color: item.color }}>
                     {String(active + 1).padStart(2, '0')}
                   </p>
-                  <p className="text-xs text-[#B7A880] font-semibold">
+                  <p className="text-xs text-theme-400 font-semibold">
                     /{String(storyItems.length).padStart(2, '0')}
                   </p>
                 </div>
@@ -683,7 +683,7 @@ function StorySection() {
                       className="w-1 rounded-full transition-all duration-500"
                       style={{
                         height: active === i ? 28 : 8,
-                        backgroundColor: active === i ? item.color : '#ECE8DA',
+                        backgroundColor: active === i ? item.color : '#eee0e3',
                       }}
                     />
                   ))}
@@ -702,7 +702,7 @@ function StorySection() {
               onClick={prev}
               className="w-11 h-11 bg-white hover:bg-white/90 rounded-full flex items-center justify-center shadow-md border border-white/80 transition-all active:scale-95"
             >
-              <ChevronLeft className="w-5 h-5 text-[#3A3220]" />
+              <ChevronLeft className="w-5 h-5 text-theme-900" />
             </button>
             {/* Dot indicators */}
             <div className="flex items-center gap-1.5">
@@ -713,7 +713,7 @@ function StorySection() {
                     style={{
                       width: active === i ? 20 : 7,
                       height: 7,
-                      backgroundColor: active === i ? item.color : '#ECE8DA',
+                      backgroundColor: active === i ? item.color : '#eee0e3',
                     }}
                   />
                 </button>
@@ -723,7 +723,7 @@ function StorySection() {
               onClick={next}
               className="w-11 h-11 bg-white hover:bg-white/90 rounded-full flex items-center justify-center shadow-md border border-white/80 transition-all active:scale-95"
             >
-              <ChevronRight className="w-5 h-5 text-[#3A3220]" />
+              <ChevronRight className="w-5 h-5 text-theme-900" />
             </button>
           </div>
 
@@ -734,7 +734,7 @@ function StorySection() {
                 key={s.id}
                 onClick={() => go(i)}
                 className={`text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full transition-all duration-300 border-2 ${active === i
-                  ? 'bg-white border-white shadow-md text-[#3A3220] scale-105'
+                  ? 'bg-white border-white shadow-md text-theme-900 scale-105'
                   : 'bg-white/50 border-transparent text-[#7A6C48]'
                   }`}
               >
@@ -765,12 +765,12 @@ function GallerySection() {
         <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full bg-[#CBBF9F]/10 blur-[100px]" />
 
         {/* Subtle grid pattern for premium modern feel */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.05] mix-blend-screen"
-          style={{ 
-            backgroundImage: `linear-gradient(rgba(183,168,128,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(183,168,128,0.2) 1px, transparent 1px)`, 
-            backgroundSize: '60px 60px' 
-          }} 
+          style={{
+            backgroundImage: `linear-gradient(rgba(183,168,128,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(183,168,128,0.2) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
         />
       </div>
 
@@ -869,6 +869,11 @@ export default function WeddingInvitation() {
   const [isOpened, setIsOpened] = useState(false);
   const [isLowPerformanceMode, setIsLowPerformanceMode] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
+
+  // Personalized Guest Link
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestPrefix = urlParams.get('p');
+  const guestName = urlParams.get('n');
 
   // Form State
   const [rsvpData, setRsvpData] = useState({ name: "", guests: "1" });
@@ -1030,18 +1035,18 @@ export default function WeddingInvitation() {
               transition={{ delay: 0.5, duration: 1 }}
               className="relative z-[101]"
             >
-              <div className="absolute -inset-4 bg-gradient-to-r from-theme-100 via-theme-200 to-theme-300 blur-2xl opacity-40 animate-pulse" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-theme-100 via-theme-300 to-theme-400 blur-2xl opacity-40 animate-pulse" />
               <motion.button
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 1)" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={openInvitation}
-                className="group relative flex flex-col items-center gap-4 bg-white/95 backdrop-blur-md border border-white/60 px-14 py-6 rounded-full text-stone-800 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.12)] transition-all duration-500 hover:shadow-theme-200/30"
+                className="group relative flex flex-col items-center gap-4 bg-white/95 backdrop-blur-md border border-white/60 px-14 py-6 rounded-full text-theme-900 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.12)] transition-all duration-500 hover:shadow-theme-200/30"
               >
                 <span className="font-cinzel text-sm tracking-[0.6em] uppercase font-bold bg-gradient-to-r from-theme-700 to-theme-900 bg-clip-text text-transparent">
                   Open Invitation
                 </span>
                 <div className="w-10 h-[1.5px] bg-gradient-to-r from-theme-300 via-theme-400 to-theme-500 group-hover:w-20 transition-all duration-500" />
-                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-stone-400 animate-pulse">
+                <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-theme-600 animate-pulse">
                   Tap to Reveal
                 </span>
               </motion.button>
@@ -1050,7 +1055,7 @@ export default function WeddingInvitation() {
             {/* Monogram with color accent */}
             <div className="absolute top-12 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
               <p className="font-cinzel text-[11px] tracking-[0.8em] font-bold uppercase flex flex-col items-center gap-3">
-                <span className="bg-gradient-to-r from-theme-600 via-theme-500 to-theme-700 bg-clip-text text-transparent opacity-80">T & I</span>
+                <span className="bg-gradient-to-r from-theme-900 via-theme-600 to-theme-900 bg-clip-text text-transparent opacity-80">T & I</span>
                 <span className="h-px w-8 bg-gradient-to-r from-transparent via-theme-300 to-transparent" />
               </p>
             </div>
@@ -1067,7 +1072,7 @@ export default function WeddingInvitation() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               onClick={() => setIsOpened(false)}
-              className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-md p-3 rounded-full shadow-xl border-2 border-theme-400/40 text-theme-800 hover:bg-theme-50 transition-all hover:scale-110"
+              className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-md p-3 rounded-full shadow-xl border-2 border-theme-400/40 text-theme-900 hover:bg-theme-50 transition-all hover:scale-110"
             >
               <div className="flex flex-col items-center">
                 <div className="text-[8px] uppercase tracking-widest font-bold">Close</div>
@@ -1075,128 +1080,127 @@ export default function WeddingInvitation() {
             </motion.button>
 
             {/* Hero Section */}
-            <section className="min-h-[100dvh] w-full flex items-center justify-center p-4 md:p-12 relative overflow-hidden">
+            <section className="min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden bg-white">
+
               {/* Background Image */}
               <div className="absolute inset-0 z-0 pointer-events-none">
                 <img
-                  src="/ChatGPT Image Jun 1, 2026, 10_13_41 PM.png"
+                  src="/ChatGPT Image Aug 14, 2026, 05_54_59 PM.png"
                   alt="Background"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-white/45" />
               </div>
 
-              {/* Background texture */}
-              <div className="absolute inset-0 opacity-[0.03] paper-grain" />
+              {/* Background texture (optional, keeping for subtle effect over image) */}
+              <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none z-0" />
 
-              {/* Large Watermark Monogram */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.03, scale: 1 }}
-                transition={{ duration: 2, ease: "easeOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-cinzel text-[40vw] text-theme-900 pointer-events-none whitespace-nowrap leading-none select-none z-0"
-              >
-                T&I
-              </motion.div>
+              {/* Gold Border Frame */}
+              <div className="absolute inset-4 sm:inset-6 md:inset-8 border-[1.5px] border-[#CBBF9F] rounded-t-[4rem] pointer-events-none z-10 opacity-80" />
 
-              {/* Central Premium Arch Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
-                className="relative z-10 w-full max-w-[420px] min-h-[500px] h-[85vh] md:h-[80vh] bg-[#ffffff] rounded-t-full shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-theme-100 flex flex-col items-center overflow-hidden p-6 pt-12 md:p-10 md:pt-16"
-              >
-                {/* Arch outline decoration */}
-                <div className="absolute inset-3 sm:inset-5 border-[2px] border-theme-400/50 rounded-t-full pointer-events-none" />
-                <div className="absolute inset-4 sm:inset-6 border-[1px] border-theme-200/40 rounded-t-full pointer-events-none" />
+              {/* Main Content */}
+              <div className="relative z-20 flex flex-col items-center text-center px-6 w-full max-w-[400px]">
 
-                {/* Top Circle Arch Floral Arrangement */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] h-auto z-20 pointer-events-none -translate-y-12">
-                  <motion.img
-                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 1.5, delay: 0.8 }}
-                    src={flowerArchImage}
-                    alt=""
-                    style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }}
-                    className="w-full h-auto object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.15)]"
-                  />
-                </div>
+                {/* Names */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 1 }}
+                  className="font-playball text-[4.5rem] sm:text-[5.5rem] text-theme-900 leading-none mb-3 drop-shadow-sm"
+                >
+                  Thilan
+                </motion.h1>
 
-                <div className="mb-10" />
+                {/* Center Divider with & */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.1, duration: 0.8 }}
+                  className="flex items-center justify-center gap-4 my-2 w-full"
+                >
+                  <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-theme-400" />
+                  <div className="w-1.5 h-1.5 rotate-45 bg-theme-400" />
+                  <span className="font-playball text-4xl text-theme-400">&</span>
+                  <div className="w-1.5 h-1.5 rotate-45 bg-theme-400" />
+                  <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-theme-400" />
+                </motion.div>
 
-                <div className="flex flex-col items-center text-center space-y-4 flex-1 w-full relative z-10">
-                  <div className="mb-4" />
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.4, duration: 1 }}
+                  className="font-playball text-[4.5rem] sm:text-[5.5rem] text-theme-900 leading-none mt-3 mb-12 drop-shadow-sm"
+                >
+                  Irish
+                </motion.h1>
 
-                  <div className="space-y-0 py-4 flex-1 flex flex-col justify-center">
-                    <motion.h1
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1, duration: 0.8 }}
-                      className="font-playball text-[3rem] sm:text-[3.5rem] md:text-[5rem] text-stone-800 leading-[1.1] drop-shadow-sm"
-                    >
-                      Thilan
-                    </motion.h1>
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 1.2, duration: 0.5 }}
-                      className="font-playball text-3xl md:text-5xl text-theme-500 italic font-light my-2 md:my-4 tracking-widest"
-                    >
-                      &
-                    </motion.div>
-                    <motion.h1
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.4, duration: 0.8 }}
-                      className="font-playball text-[3rem] sm:text-[3.5rem] md:text-[5rem] text-stone-800 leading-[1.1] drop-shadow-sm"
-                    >
-                      Irish
-                    </motion.h1>
+                {/* Small divider */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.7, duration: 1 }}
+                  className="flex items-center gap-3 mb-8 opacity-70"
+                >
+                  <div className="w-10 h-[1px] bg-theme-400" />
+                  <div className="w-1.5 h-1.5 rotate-45 bg-theme-400" />
+                  <div className="w-10 h-[1px] bg-theme-400" />
+                </motion.div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.8, duration: 1 }}
-                      className="mt-6 md:mt-10"
-                    >
-                      <span className="inline-block text-[10px] md:text-[13px] uppercase tracking-[0.6em] md:tracking-[0.8em] text-zinc-800 font-bold px-5 py-2 rounded-full bg-theme-100/40 border border-theme-200/30">
-                        Please join us
-                      </span>
-                    </motion.div>
-                  </div>
+                {/* Please Join Us */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.9, duration: 1 }}
+                  className="mb-10 px-8 py-3 rounded-full border-[1.5px] border-theme-400/60 bg-white/40 backdrop-blur-sm"
+                >
+                  <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-theme-900 font-bold">
+                    Please Join Us
+                  </span>
+                </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.8, duration: 1 }}
-                    className="mt-auto pb-4 w-full flex flex-col items-center"
-                  >
-                    <div className="flex items-center justify-center gap-4 mb-6 opacity-70 w-full px-8">
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-theme-300 to-theme-400" />
-                      <div className="w-1.5 h-1.5 rotate-45 bg-theme-500 shrink-0" />
-                      <div className="h-px w-full bg-gradient-to-l from-transparent via-theme-300 to-theme-400" />
-                    </div>
-                    <div className="font-cinzel space-y-1">
-                      <p className="text-sm md:text-base text-stone-700 tracking-[0.2em] md:tracking-[0.3em] font-bold">2026.08.06</p>
-                      <p className="text-[8px] md:text-[9px] text-theme-600 tracking-[0.2em] uppercase font-bold">Beatriz Rafaella Resort, Balud, Masbate</p>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
+                {/* Small divider */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2.1, duration: 1 }}
+                  className="flex items-center gap-3 mb-10 opacity-70"
+                >
+                  <div className="w-16 h-[1px] bg-theme-400" />
+                  <div className="w-2 h-2 rotate-45 bg-theme-400" />
+                  <div className="w-16 h-[1px] bg-theme-400" />
+                </motion.div>
 
+                {/* Date and Location */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.3, duration: 1 }}
+                  className="flex flex-col items-center gap-3"
+                >
+                  <p className="font-cinzel text-xl md:text-2xl text-theme-900 tracking-[0.3em] font-bold">2026.09.25</p>
+                </motion.div>
+
+                {/* Bottom divider */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2.5, duration: 1 }}
+                  className="flex items-center gap-3 mt-6 opacity-70"
+                >
+                  <div className="w-10 h-[1px] bg-theme-400" />
+                  <div className="w-1 h-1 rotate-45 bg-theme-400" />
+                  <div className="w-10 h-[1px] bg-theme-400" />
+                </motion.div>
+              </div>
             </section>
-
-            <StorySection />
 
             {/* Wedding Details Section */}
             <section className="cv-auto py-24 md:py-32 w-full flex flex-col items-center px-4 relative">
               <div className="section-floral-overlay absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
                 {/* Gold/Beige Orchids in Corners */}
-                <InviteImage src={flowerImage} style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute -left-12 -top-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain -rotate-[105deg]" alt="" />
-                <InviteImage src={flowerImage} style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute -right-12 -top-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain -rotate-[15deg]" alt="" />
-                <InviteImage src={flowerImage} style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute -left-12 -bottom-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain rotate-[165deg]" alt="" />
-                <InviteImage src={flowerImage} style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute -right-12 -bottom-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain rotate-[75deg]" alt="" />
+                <InviteImage src={flowerImage} style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute -left-12 -top-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain -rotate-[105deg]" alt="" />
+                <InviteImage src={flowerImage} style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute -right-12 -top-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain -rotate-[15deg]" alt="" />
+                <InviteImage src={flowerImage} style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute -left-12 -bottom-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain rotate-[165deg]" alt="" />
+                <InviteImage src={flowerImage} style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute -right-12 -bottom-12 w-[220px] md:w-[380px] h-auto opacity-70 object-contain rotate-[75deg]" alt="" />
               </div>
 
               <div className="max-w-[1000px] w-full flex flex-col items-center text-center relative z-10">
@@ -1206,32 +1210,31 @@ export default function WeddingInvitation() {
                   viewport={{ once: true }}
                   className="flex flex-col items-center mb-8 md:mb-16"
                 >
-                  <div className="w-[2px] h-16 md:h-24 bg-gradient-to-b from-transparent via-theme-400 to-transparent mb-8 md:mb-12 shadow-[0_0_10px_rgba(203,191,159,0.3)]" />
-                  <p className="text-zinc-800 text-[10px] md:text-[14px] tracking-[0.6em] md:tracking-[0.8em] uppercase font-bold text-center leading-relaxed max-w-2xl px-4">
-                    <span className="text-theme-500 block text-[8px] md:text-[10px] mb-3 md:mb-4 tracking-[0.8em]">Wedding Celebration</span>
-                    You are cordially invited to<br className="hidden md:block" />
-                    <span className="text-theme-600">celebrate the union of</span>
-                  </p>
-                  <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-theme-400 to-transparent mt-8 md:mt-10 shadow-[0_0_10px_rgba(203,191,159,0.3)]" />
+                  <div className="w-[2px] h-16 md:h-24 bg-gradient-to-b from-transparent via-theme-400 to-transparent mb-6 md:mb-10 shadow-[0_0_10px_rgba(210,180,185,0.3)]" />
+                  
+                  <div className="flex flex-col items-center text-center max-w-2xl px-4">
+                    <span className="text-theme-400 text-[9px] md:text-[11px] mb-4 md:mb-6 tracking-[0.8em] uppercase font-bold">
+                      Wedding Celebration
+                    </span>
+                    
+                    {guestName && (
+                      <h3 className="font-playball text-theme-900 text-3xl md:text-4xl mb-4 tracking-normal capitalize">
+                        Dear {guestPrefix} {guestName},
+                      </h3>
+                    )}
+                    
+                    <h3 className="font-cinzel text-theme-900 text-[11px] md:text-sm leading-loose tracking-[0.4em] uppercase font-light">
+                      You are cordially invited to
+                    </h3>
+                    <p className="font-playball text-theme-600 text-3xl md:text-5xl mt-3 md:mt-5 capitalize tracking-wide drop-shadow-sm">
+                      Celebrate the Union of
+                    </p>
+                  </div>
+
+                  <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-theme-400 to-transparent mt-8 md:mt-12 shadow-[0_0_10px_rgba(210,180,185,0.3)]" />
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="relative mb-10 md:mb-14"
-                >
-                  <div className="absolute -inset-3 md:-inset-4 rounded-[2rem] bg-theme-200/35 blur-xl" />
-                  <div className="relative bg-white/90 p-2.5 md:p-3 rounded-[2rem] border border-theme-200 shadow-[0_20px_50px_-20px_rgba(183,168,128,0.45)]">
-                    <InviteImage
-                      src={brideGroomImage}
-                      alt="Bride and groom wedding illustration"
-                      loading="eager"
-                      className="w-[260px] h-[320px] md:w-[270px] md:h-[320px] object-cover rounded-[1.6rem] border border-theme-100"
-                    />
-                  </div>
-                </motion.div>
+
 
                 <div className="relative w-full flex flex-col md:flex-row items-center justify-center md:items-stretch gap-6 md:gap-10 my-12 md:my-20 z-10 px-2 lg:px-8">
 
@@ -1246,13 +1249,13 @@ export default function WeddingInvitation() {
                     <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
                     <div className="relative z-10 space-y-4 py-8 md:py-12">
                       <div className="space-y-2">
-                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved son of</p>
-                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">W.K.W Gamini<br />& K.Srima Mallika</p>
+                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-theme-600">Beloved son of</p>
+                        <p className="text-xs md:text-sm font-cinzel text-theme-700 tracking-wide leading-relaxed">W.K.W Gamini<br />& K.Srima Mallika</p>
                       </div>
-                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Thilan</h3>
+                      <h3 className="text-5xl md:text-7xl font-playball text-theme-900 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Thilan</h3>
                     </div>
                   </motion.div>
- 
+
                   {/* Vertical Divider / AMPERSAND */}
                   <div className="flex flex-row md:flex-col items-center justify-center gap-4 py-4 md:py-0 relative z-20">
                     <div className="hidden md:block w-px h-32 bg-gradient-to-t from-theme-300 to-transparent" />
@@ -1261,13 +1264,13 @@ export default function WeddingInvitation() {
                       whileInView={{ scale: 1, rotate: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
-                      className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-theme-500 to-theme-700 rounded-full flex items-center justify-center shadow-xl shadow-theme-900/20 border-4 border-[#fdfaf5]"
+                      className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-theme-400 to-theme-500 rounded-full flex items-center justify-center shadow-xl shadow-theme-900/10 border-4 border-[#fdfaf5]"
                     >
                       <span className="text-3xl md:text-5xl font-playball text-white md:-mt-1 drop-shadow-md">&</span>
                     </motion.div>
                     <div className="hidden md:block w-px h-32 bg-gradient-to-b from-theme-300 to-transparent" />
                   </div>
- 
+
                   {/* Bride's Card - Offset structurally on desktop */}
                   <motion.div
                     initial={{ opacity: 0, x: 30, y: 20 }}
@@ -1280,10 +1283,10 @@ export default function WeddingInvitation() {
                     <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
                     <div className="relative z-10 space-y-4 py-8 md:py-12">
                       <div className="space-y-2">
-                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-stone-400">Beloved daughter of</p>
-                        <p className="text-xs md:text-sm font-cinzel text-stone-600 tracking-wide leading-relaxed">Beinvenido Vallena<br />& Arlene Vallena</p>
+                        <p className="text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-bold text-theme-600">Beloved daughter of</p>
+                        <p className="text-xs md:text-sm font-cinzel text-theme-700 tracking-wide leading-relaxed">Beinvenido Vallena<br />& Arlene Vallena</p>
                       </div>
-                      <h3 className="text-5xl md:text-7xl font-playball text-theme-800 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Irish</h3>
+                      <h3 className="text-5xl md:text-7xl font-playball text-theme-900 group-hover:scale-110 transition-transform duration-700 pt-6 drop-shadow-sm">Irish</h3>
                     </div>
                   </motion.div>
                 </div>
@@ -1296,59 +1299,59 @@ export default function WeddingInvitation() {
                   className="flex flex-col items-center space-y-10 mt-4 md:mt-16 w-full"
                 >
                   <div className="w-1.5 h-1.5 rotate-45 bg-theme-300" />
- 
+
                   <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 text-center w-full max-w-5xl px-4">
                     {/* Column 1: Date */}
                     <div className="flex flex-col items-center flex-1">
                       <Calendar className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
-                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">The Date</p>
-                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">2026.08.06</p>
-                      <p className="font-cinzel text-lg md:text-xl text-theme-600 tracking-[0.3em] font-normal mt-2">THURSDAY</p>
+                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-theme-600 font-bold mb-3">The Date</p>
+                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">2026.09.25</p>
+                      <p className="font-cinzel text-lg md:text-xl text-theme-600 tracking-[0.3em] font-normal mt-2">FRIDAY</p>
                     </div>
- 
+
                     {/* Divider */}
                     <div className="hidden lg:flex flex-col items-center gap-3">
                       <div className="w-px h-12 bg-theme-200" />
                       <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
                       <div className="w-px h-12 bg-theme-200" />
                     </div>
- 
+
                     <div className="lg:hidden flex flex-row items-center gap-3">
                       <div className="h-px w-10 bg-theme-200" />
                       <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
                       <div className="h-px w-10 bg-theme-200" />
                     </div>
- 
+
                     {/* Column 2: Ceremony */}
                     <div className="flex flex-col items-center flex-1">
                       <Clock className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
-                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">Ceremony</p>
-                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">04:00 PM</p>
-                      <p className="font-cinzel text-xs md:text-sm text-theme-600 tracking-[0.2em] mt-3 uppercase">Beatriz Rafaella Resort</p>
+                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-theme-600 font-bold mb-3">Starts</p>
+                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">06:00 PM</p>
+                      <p className="font-cinzel text-xs md:text-sm text-theme-600 tracking-[0.2em] mt-3 uppercase">Paradise Inn Bolgoda</p>
                     </div>
- 
+
                     {/* Divider */}
                     <div className="hidden lg:flex flex-col items-center gap-3">
                       <div className="w-px h-12 bg-theme-200" />
                       <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
                       <div className="w-px h-12 bg-theme-200" />
                     </div>
- 
+
                     <div className="lg:hidden flex flex-row items-center gap-3">
                       <div className="h-px w-10 bg-theme-200" />
                       <div className="w-1.5 h-1.5 rounded-full bg-theme-400" />
                       <div className="h-px w-10 bg-theme-200" />
                     </div>
- 
+
                     {/* Column 3: Reception */}
                     <div className="flex flex-col items-center flex-1">
                       <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
-                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-stone-400 font-bold mb-3">Reception</p>
-                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">06:00 PM</p>
-                      <p className="font-cinzel text-xs md:text-sm text-theme-600 tracking-[0.2em] mt-3 uppercase">Beatriz Rafaella Resort</p>
+                      <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-theme-600 font-bold mb-3">Ends</p>
+                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">11:30 PM</p>
+                      <p className="font-cinzel text-xs md:text-sm text-theme-600 tracking-[0.2em] mt-3 uppercase">Paradise Inn Bolgoda</p>
                     </div>
                   </div>
- 
+
                 </motion.div>
               </div>
             </section>
@@ -1360,7 +1363,7 @@ export default function WeddingInvitation() {
               {/* Decorative Background */}
               <div className="absolute inset-0 opacity-5 paper-grain pointer-events-none" />
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-theme-200 blur-[150px] rounded-full opacity-20 pointer-events-none" />
- 
+
               <div className="container mx-auto px-4 max-w-4xl relative z-10">
                 <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
                   <div className="flex items-center gap-4">
@@ -1372,7 +1375,7 @@ export default function WeddingInvitation() {
                     Where & When
                   </h2>
                 </div>
- 
+
                 <div className="max-w-2xl mx-auto">
                   {/* Unified Resort Venue Card */}
                   <motion.div
@@ -1383,40 +1386,40 @@ export default function WeddingInvitation() {
                   >
                     <div className="space-y-6">
                       <span className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] font-bold text-theme-500 bg-theme-100/50 px-4 py-1.5 rounded-full inline-block">
-                        Resort Wedding & Celebration
+                        Garden Wedding & Celebration
                       </span>
                       <h3 className="font-cinzel text-2xl md:text-3xl text-theme-900 font-bold tracking-wider">
-                        Beatriz Rafaella Resort
+                        Paradise Inn Bolgoda
                       </h3>
-                      
+
                       <div className="space-y-4 relative pt-2 flex flex-col items-center">
                         <div className="pl-6 space-y-2">
-                          <p className="text-stone-700 text-sm md:text-lg tracking-wide font-medium">
-                            Balud, Masbate, Philippines
+                          <p className="text-theme-900 text-sm md:text-lg tracking-wide font-medium">
+                            Garden Area
                           </p>
-                          <p className="text-stone-500 text-xs md:text-sm font-light max-w-md mx-auto">
-                            The ceremony will start promptly at 04:00 PM by the beachfront, followed immediately by sunset cocktails and dinner reception.
+                          <p className="text-theme-600 text-xs md:text-sm font-light max-w-md mx-auto">
+                            The ceremony will start promptly at 06:00 PM, followed immediately by dinner reception.
                           </p>
                         </div>
                       </div>
                     </div>
- 
+
                     <div className="w-full flex justify-center">
                       <button
-                        onClick={() => window.open('https://maps.app.goo.gl/6s3MLHVqsvUTS3tG8?g_st=ic', '_blank')}
-                        className="w-full md:w-auto flex items-center justify-center gap-4 bg-theme-800 text-white px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs hover:bg-theme-900 hover:shadow-xl hover:shadow-theme-900/20 transition-all duration-300 group cursor-pointer"
+                        onClick={() => window.open('https://maps.app.goo.gl/81v2bSrFmWT6DHj2A?g_st=ic', '_blank')}
+                        className="w-full md:w-auto flex items-center justify-center gap-4 bg-theme-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs hover:bg-theme-800 hover:shadow-xl hover:shadow-theme-900/20 transition-all duration-300 group cursor-pointer"
                       >
                         <MapPin className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
                         Directions to Resort
                       </button>
                     </div>
- 
+
                     {/* Arched Map Container */}
                     <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-t-[100px] rounded-b-[2rem] shadow-[0_20px_45px_-10px_rgba(0,0,0,0.08)] border-[8px] border-white bg-theme-100 overflow-hidden group">
                       <div className="absolute inset-0 border border-theme-200 rounded-t-[92px] rounded-b-[1.5rem] pointer-events-none z-10" />
                       <div className="absolute inset-0 w-full h-full scale-[1.1] group-hover:scale-[1.05] transition-transform duration-[2s]">
                         <iframe
-                          src="https://maps.google.com/maps?q=Beatriz+Rafaella+Resort+Balud+Masbate&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                          src="https://maps.google.com/maps?q=Paradise+Inn+Bolgoda&t=&z=14&ie=UTF8&iwloc=&output=embed"
                           width="100%"
                           height="100%"
                           style={{ border: 0 }}
@@ -1427,7 +1430,7 @@ export default function WeddingInvitation() {
                         />
                       </div>
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/80 to-transparent h-20 pointer-events-none z-10 flex items-end justify-center pb-4">
-                        <p className="text-[7px] uppercase tracking-widest text-stone-500 font-bold bg-white/95 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md inline-flex items-center gap-1.5">
+                        <p className="text-[7px] uppercase tracking-widest text-theme-600 font-bold bg-white/95 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md inline-flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-theme-400 animate-pulse" />
                           View on Map
                         </p>
@@ -1438,104 +1441,16 @@ export default function WeddingInvitation() {
               </div>
             </section>
 
-            {/* Event Timeline Section */}
-            <section className="cv-auto py-24 md:py-36 bg-[#F9FAFB] relative overflow-hidden border-y border-theme-100/30">
-              <div className="absolute inset-0 opacity-[0.02] paper-grain pointer-events-none" />
-              
-              <div className="container mx-auto px-4 max-w-4xl relative z-10">
-                <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-[2px] bg-theme-400 shadow-[0_0_8px_rgba(203,191,159,0.3)]" />
-                    <span className="text-theme-600 font-bold uppercase tracking-[0.4em] text-[9px] md:text-[11px]">The Day's Schedule</span>
-                    <div className="w-10 h-[2px] bg-theme-400 shadow-[0_0_8px_rgba(203,191,159,0.3)]" />
-                  </div>
-                  <h2 className="font-playball text-[3.5rem] sm:text-[4rem] md:text-[5.5rem] text-theme-900 leading-[1] drop-shadow-sm mt-4">
-                    Event Timeline
-                  </h2>
-                </div>
 
-                {/* Timeline Container */}
-                <div className="relative border-l border-theme-300 ml-4 md:ml-0 md:left-1/2 md:-translate-x-1/2 py-8 space-y-12">
-                  {[
-                    {
-                      time: "04:00 PM",
-                      title: "Arrival & Welcome Drinks",
-                      desc: "Guests arrive at the resort beachfront and enjoy light, refreshing drinks.",
-                      icon: Clock
-                    },
-                    {
-                      time: "04:30 PM",
-                      title: "Solemn Vows",
-                      desc: "The exchange of wedding vows by the beach as the sun begins to set.",
-                      icon: Sparkles
-                    },
-                    {
-                      time: "05:30 PM",
-                      title: "Sunset Cocktails & Photos",
-                      desc: "Enjoy cocktails and photo sessions with the family, friends, and newlyweds.",
-                      icon: MapPin
-                    },
-                    {
-                      time: "06:00 PM",
-                      title: "Grand Dinner Reception",
-                      desc: "Join us for a beautiful dinner reception with toastings, speeches, and dances.",
-                      icon: Sparkles
-                    },
-                    {
-                      time: "08:30 PM",
-                      title: "After-Party & Dancing",
-                      desc: "Celebrate the night away under the stars with music, drinks, and dance.",
-                      icon: Sparkles
-                    }
-                  ].map((event, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: idx % 2 === 0 ? -35 : 35, y: 20 }}
-                      whileInView={{ opacity: 1, x: 0, y: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
-                      className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                        idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                      }`}
-                    >
-                      {/* Timeline dot */}
-                      <div className="absolute -left-[20px] md:left-1/2 md:-translate-x-1/2 top-1 md:top-auto w-10 h-10 rounded-full bg-white border border-theme-300 flex items-center justify-center shadow-md z-10">
-                        <event.icon className="w-4 h-4 text-theme-500" />
-                      </div>
 
-                      {/* Content Card */}
-                      <div className={`w-full md:w-1/2 pl-8 md:pl-0 ${
-                        idx % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
-                      }`}>
-                        <div className="bg-white p-6 rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.03)] border border-theme-100/50 hover:shadow-md transition-shadow duration-500">
-                          <span className="font-cinzel text-xs md:text-sm font-bold text-theme-500 tracking-wider">
-                            {event.time}
-                          </span>
-                          <h3 className="font-cinzel text-lg md:text-xl font-bold text-theme-900 mt-1 mb-2 tracking-wide">
-                            {event.title}
-                          </h3>
-                          <p className="text-stone-500 text-xs md:text-sm font-light leading-relaxed">
-                            {event.desc}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Empty spacer for desktop layout balancing */}
-                      <div className="hidden md:block w-1/2" />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <GallerySection />
+            <StorySection />
 
             {/* RSVP Section */}
-            <section className="cv-auto py-24 md:py-36 bg-[#18181B] text-white relative overflow-hidden flex flex-col items-center">
+            <section className="cv-auto py-24 md:py-36 bg-theme-900 text-white relative overflow-hidden flex flex-col items-center">
               {/* Opulent dark background */}
               <div className="absolute inset-0 opacity-10 paper-grain pointer-events-none" />
-              <div className="absolute top-0 right-0 w-[60vw] h-[60vw] max-w-[800px] bg-theme-800 blur-[150px] rounded-full opacity-30 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[800px] bg-theme-900 blur-[150px] rounded-full opacity-40 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-[60vw] h-[60vw] max-w-[800px] bg-theme-700 blur-[150px] rounded-full opacity-30 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[800px] bg-theme-800 blur-[150px] rounded-full opacity-40 pointer-events-none" />
 
               <div className="container mx-auto px-4 max-w-2xl text-center relative z-10 w-full">
                 <motion.div
@@ -1544,15 +1459,15 @@ export default function WeddingInvitation() {
                   viewport={{ once: true }}
                   className="flex flex-col items-center"
                 >
-                  <p className="text-[10px] md:text-[12px] uppercase tracking-[0.5em] md:tracking-[0.8em] text-theme-300 font-bold mb-6">Will You Join Us?</p>
+                  <p className="text-[10px] md:text-[12px] uppercase tracking-[0.5em] md:tracking-[0.8em] text-theme-400 font-bold mb-6">Will You Join Us?</p>
                   <h2 className="font-playball text-[3.5rem] sm:text-[4rem] md:text-[5.5rem] text-white mb-6 drop-shadow-md">RSVP</h2>
                   <div className="flex items-center gap-4 justify-center w-full mb-8 opacity-60">
-                    <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-theme-300" />
+                    <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-theme-400" />
                     <div className="w-1.5 h-1.5 rotate-45 bg-white" />
-                    <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-theme-300" />
+                    <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-theme-400" />
                   </div>
                   <p className="text-stone-300 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-16 tracking-wide font-light">
-                    We would be absolutely thrilled to celebrate with you. Kindly respond by the 06th of July.
+                    We would be absolutely thrilled to celebrate with you. Kindly respond by the 1st of September.
                   </p>
 
                   {/* Premium RSVP Form */}
@@ -1578,11 +1493,11 @@ export default function WeddingInvitation() {
                             onChange={(e) => setRsvpData({ ...rsvpData, guests: e.target.value })}
                             className="w-full bg-transparent border-b border-white/20 px-2 py-3 text-white focus:outline-none focus:border-theme-300 transition-colors font-cinzel text-lg md:text-xl tracking-wide appearance-none cursor-pointer"
                           >
-                            <option value="1" className="bg-[#18181B] text-white">1 Guest (Just Me)</option>
-                            <option value="2" className="bg-[#18181B] text-white">2 Guests</option>
-                            <option value="3" className="bg-[#18181B] text-white">3 Guests</option>
-                            <option value="4" className="bg-[#18181B] text-white">4 Guests</option>
-                            <option value="0" className="bg-[#18181B] text-theme-300">Regretfully Decline</option>
+                            <option value="1" className="bg-theme-900 text-white">1 Guest (Just Me)</option>
+                            <option value="2" className="bg-theme-900 text-white">2 Guests</option>
+                            <option value="3" className="bg-theme-900 text-white">3 Guests</option>
+                            <option value="4" className="bg-theme-900 text-white">4 Guests</option>
+                            <option value="0" className="bg-theme-900 text-theme-300">Regretfully Decline</option>
                           </select>
                           <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                             <div className="w-2 h-2 border-r border-b border-theme-300 rotate-45 transform -translate-y-[25%]" />
@@ -1594,7 +1509,7 @@ export default function WeddingInvitation() {
                       <div className="pt-10">
                         <button
                           disabled={isSubmitting}
-                          className="w-full bg-theme-200 text-stone-900 py-5 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group inline-flex justify-center items-center gap-4"
+                          className="w-full bg-white text-theme-900 py-5 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm hover:bg-theme-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group inline-flex justify-center items-center gap-4"
                         >
                           {isSubmitting ? "Sending..." : (submitStatus === "rsvp_success" ? "Thank You!" : "Send RSVP")}
                         </button>
@@ -1610,8 +1525,8 @@ export default function WeddingInvitation() {
               <div className="absolute inset-0 opacity-[0.03] paper-grain pointer-events-none" />
 
               <section className="cv-auto py-24 md:py-36 relative flex flex-col items-center overflow-hidden">
-                <InviteImage src={flowerImage} alt="" style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute top-0 right-0 w-[40vw] max-w-[500px] opacity-[0.06] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-                <InviteImage src={flowerImage} alt="" style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }} className="absolute bottom-16 left-1/2 w-[38vw] max-w-[360px] opacity-[0.1] -translate-x-1/2 pointer-events-none" />
+                <InviteImage src={flowerImage} alt="" style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute top-0 right-0 w-[40vw] max-w-[500px] opacity-[0.2] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+                <InviteImage src={flowerImage} alt="" style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }} className="absolute bottom-16 left-1/2 w-[38vw] max-w-[360px] opacity-[0.3] -translate-x-1/2 pointer-events-none" />
 
                 <div className="container mx-auto px-4 max-w-4xl text-center relative z-10 w-full">
                   <motion.div
@@ -1621,13 +1536,13 @@ export default function WeddingInvitation() {
                     className="flex flex-col items-center"
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-theme-100/50 mb-8 mt-4 shadow-sm border border-theme-200/50">
-                      <Sparkles className="w-8 h-8 text-theme-500" />
+                      <Sparkles className="w-8 h-8 text-theme-400" />
                     </div>
 
                     <h2 className="font-playball text-[3.5rem] sm:text-[4rem] md:text-[5.5rem] text-theme-800 mb-6 drop-shadow-sm leading-none">Best Wishes</h2>
                     <div className="h-px w-24 bg-gradient-to-r from-transparent via-theme-400 to-transparent mb-8" />
 
-                    <p className="text-stone-500 text-sm md:text-lg leading-relaxed max-w-xl mx-auto mb-16 font-light tracking-wide px-4">
+                    <p className="text-theme-600 text-sm md:text-lg leading-relaxed max-w-xl mx-auto mb-16 font-light tracking-wide px-4">
                       Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a message, we would be delighted to read it!
                     </p>
 
@@ -1638,31 +1553,31 @@ export default function WeddingInvitation() {
 
                       <form className="space-y-8 text-left relative z-10" onSubmit={(e) => { e.preventDefault(); handleSubmit("wish", wishData); }}>
                         <div className="space-y-3">
-                          <label className="text-[7px] md:text-[9px] uppercase tracking-[0.4em] font-bold text-stone-400 ml-2">Your Name</label>
+                          <label className="text-[7px] md:text-[9px] uppercase tracking-[0.4em] font-bold text-theme-600 ml-2">Your Name</label>
                           <input
                             type="text"
                             required
                             value={wishData.name}
                             onChange={(e) => setWishData({ ...wishData, name: e.target.value })}
                             placeholder="John Doe"
-                            className="w-full bg-stone-50/50 border-b border-theme-200 px-4 py-4 text-theme-900 placeholder:text-stone-300 focus:outline-none focus:border-theme-400 focus:bg-white transition-all font-cinzel text-lg tracking-wide rounded-t-lg"
+                            className="w-full bg-[#FCFBF7] border-b border-theme-200 px-4 py-4 text-theme-900 placeholder:text-theme-400 focus:outline-none focus:border-theme-400 focus:bg-white transition-all font-cinzel text-lg tracking-wide rounded-t-lg"
                           />
                         </div>
                         <div className="space-y-3">
-                          <label className="text-[7px] md:text-[9px] uppercase tracking-[0.4em] font-bold text-stone-400 ml-2">Your Message</label>
+                          <label className="text-[7px] md:text-[9px] uppercase tracking-[0.4em] font-bold text-theme-600 ml-2">Your Message</label>
                           <textarea
                             rows={4}
                             required
                             value={wishData.message}
                             onChange={(e) => setWishData({ ...wishData, message: e.target.value })}
                             placeholder="Wishing you a lifetime of happiness..."
-                            className="w-full bg-stone-50/50 border-b border-theme-200 px-4 py-4 text-theme-900 placeholder:text-stone-300 focus:outline-none focus:border-theme-400 focus:bg-white transition-all font-cinzel text-lg tracking-wide resize-none rounded-t-lg"
+                            className="w-full bg-[#FCFBF7] border-b border-theme-200 px-4 py-4 text-theme-900 placeholder:text-theme-400 focus:outline-none focus:border-theme-400 focus:bg-white transition-all font-cinzel text-lg tracking-wide resize-none rounded-t-lg"
                           />
                         </div>
                         <div className="pt-6 flex justify-center">
                           <button
                             disabled={isSubmitting}
-                            className="bg-theme-800 text-white px-12 py-5 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-theme-900 hover:shadow-xl hover:shadow-theme-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group/btn inline-flex items-center gap-4"
+                            className="bg-theme-900 text-white px-12 py-5 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-theme-800 hover:shadow-xl hover:shadow-theme-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group/btn inline-flex items-center gap-4"
                           >
                             {isSubmitting ? "Sending..." : (submitStatus === "wish_success" ? "Wishes Sent!" : "Send Wishes")}
                           </button>
@@ -1671,7 +1586,7 @@ export default function WeddingInvitation() {
                     </div>
 
                     <div className="mt-32 md:mt-48 space-y-6 flex flex-col items-center relative w-full">
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-playball text-[22vw] md:text-[220px] text-theme-100/40 whitespace-nowrap pointer-events-none z-0 select-none">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-playball text-[22vw] md:text-[220px] text-theme-300/30 whitespace-nowrap pointer-events-none z-0 select-none">
                         Thank You
                       </div>
                       <p className="text-[9px] md:text-[11px] uppercase tracking-[0.8em] text-theme-600 font-bold relative z-10 bg-[#FFFFFF] px-6 py-2 rounded-full border border-theme-100/50 shadow-sm">With Love</p>
@@ -1684,7 +1599,7 @@ export default function WeddingInvitation() {
                         transition={{ duration: 0.9, ease: "easeOut" }}
                         src={flowerImage}
                         alt=""
-                        style={{ filter: "sepia(0.85) saturate(1.2) hue-rotate(10deg) contrast(0.95)" }}
+                        style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(320deg) contrast(0.95)" }}
                         className="relative z-10 mt-8 w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-[0_12px_24px_rgba(75,85,99,0.2)]"
                       />
                     </div>
@@ -1694,7 +1609,7 @@ export default function WeddingInvitation() {
 
               {/* Footer */}
               <footer className="py-20 border-t border-theme-200/30 text-center relative z-10 space-y-6">
-                <p className="text-[9px] md:text-[11px] uppercase tracking-[0.5em] text-stone-500 font-bold">
+                <p className="text-[9px] md:text-[11px] uppercase tracking-[0.5em] text-theme-600 font-bold">
                   © 2026 Thilan & Irish. All rights reserved.
                 </p>
 
@@ -1728,7 +1643,7 @@ export default function WeddingInvitation() {
           background: #FFFFFF;
         }
         ::-webkit-scrollbar-thumb {
-          background: #CBBF9F;
+          background: #D2B4B9;
           border-radius: 10px;
         }
       `}} />

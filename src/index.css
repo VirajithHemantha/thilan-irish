@@ -8,19 +8,19 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-playball: "Playball", cursive;
 
-  --color-sage: #CBBF9F;
+  --color-sage: #D2B4B9;
   --color-paper: #FFFFFF;
 
   --color-theme-50: #FCFBF7;
   --color-theme-100: #F7F5EE;
   --color-theme-200: #ECE8DA;
-  --color-theme-300: #DFD9C4;
-  --color-theme-400: #CBBF9F;
-  --color-theme-500: #B7A880;
-  --color-theme-600: #9A8A60;
-  --color-theme-700: #7A6C48;
-  --color-theme-800: #5A4F35;
-  --color-theme-900: #3A3220;
+  --color-theme-300: #E0CDD1;
+  --color-theme-400: #D2B4B9;
+  --color-theme-500: #C39AA1;
+  --color-theme-600: #4A5D78;
+  --color-theme-700: #2E4057;
+  --color-theme-800: #1A2B42;
+  --color-theme-900: #0F1A2A;
 }
 
 .silver-border {
