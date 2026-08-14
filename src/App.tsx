@@ -863,7 +863,7 @@ function GallerySection() {
   );
 }
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyvlsuJlJRDCWlOq6MDTaR5L86hzjbDI2NAWuUixPRGxh1v-NYC0pY05ygJhKOP7KlnZw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXnXfayJXmh4ZvXn-OFgvMvD67WvKpg6pScygGJlCc67EXli7c4pVIYhQLKhlrjorI/exec";
 
 export default function WeddingInvitation() {
   const [isOpened, setIsOpened] = useState(false);
@@ -1411,9 +1411,7 @@ export default function WeddingInvitation() {
                     className="flex flex-col space-y-8 text-center items-center"
                   >
                     <div className="space-y-6">
-                      <span className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] font-bold text-theme-500 bg-theme-100/50 px-4 py-1.5 rounded-full inline-block">
-                        Garden Wedding & Celebration
-                      </span>
+
                       <h3 className="font-cinzel text-2xl md:text-3xl text-theme-900 font-bold tracking-wider">
                         Paradise Inn Bolgoda
                       </h3>
