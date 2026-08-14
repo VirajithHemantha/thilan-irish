@@ -32,7 +32,7 @@ export default function Admin() {
 
 With joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.
 
-Please view our wedding invitation and all the event details through the link below 🌐:
+Please view our homecoming invitation and all the event details through the link below 🌐:
 
 ${generatedLink}
 

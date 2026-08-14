@@ -299,7 +299,7 @@ function CountdownSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-theme-700 sm:text-lg">
-            Every second brings us closer to our blessed wedding day. We cannot wait to celebrate this grace-filled moment with you.
+            Every second brings us closer to our blessed homecoming. We cannot wait to celebrate this grace-filled moment with you.
           </p>
         </motion.div>
 
@@ -428,8 +428,8 @@ const storyItems = [
     id: 3,
     chapter: "Chapter IV",
     title: "Forever Begins",
-    subtitle: "Our Wedding Day",
-    content: "Now we celebrate our wedding day with the people we love. Thank you for being part of our story.",
+    subtitle: "Our Homecoming",
+    content: "Now we celebrate our homecoming with the people we love. Thank you for being part of our story.",
     icon: PartyPopper,
     color: "#CBBF9F",
     gradient: "from-[#CBBF9F]/15 to-[#FCFBF7]/20",
@@ -995,11 +995,13 @@ export default function WeddingInvitation() {
 
             {/* Background Image */}
             <div className="absolute inset-0 z-0 pointer-events-none">
-              <img
-                src="/ChatGPT Image Jun 1, 2026, 10_13_41 PM.png"
-                alt="Background"
-                className="w-full h-full object-cover"
-              />
+                <img
+                  src="/ChatGPT Image Jun 1, 2026, 10_13_41 PM.png"
+                  alt="Background"
+                  fetchPriority="high"
+                  loading="eager"
+                  className="w-full h-full object-cover"
+                />
               <div className="absolute inset-0 bg-white/40" />
             </div>
 
@@ -1087,6 +1089,8 @@ export default function WeddingInvitation() {
                 <img
                   src="/ChatGPT Image Aug 14, 2026, 05_54_59 PM.png"
                   alt="Background"
+                  fetchPriority="high"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -1176,7 +1180,7 @@ export default function WeddingInvitation() {
                   transition={{ delay: 2.3, duration: 1 }}
                   className="flex flex-col items-center gap-3"
                 >
-                  <p className="font-cinzel text-xl md:text-2xl text-theme-900 tracking-[0.3em] font-bold">2026.09.25</p>
+                  <p className="font-cinzel text-xl md:text-2xl text-theme-900 tracking-[0.3em] font-bold">25.09.2026</p>
                 </motion.div>
 
                 {/* Bottom divider */}
@@ -1214,18 +1218,10 @@ export default function WeddingInvitation() {
                   
                   <div className="flex flex-col items-center text-center max-w-2xl px-4">
                     <span className="text-theme-400 text-[9px] md:text-[11px] mb-4 md:mb-6 tracking-[0.8em] uppercase font-bold">
-                      Wedding Celebration
+                      Homecoming Celebration
                     </span>
                     
-                    {guestName && (
-                      <h3 className="font-playball text-theme-900 text-3xl md:text-4xl mb-4 tracking-normal capitalize">
-                        Dear {guestPrefix} {guestName},
-                      </h3>
-                    )}
-                    
-                    <h3 className="font-cinzel text-theme-900 text-[11px] md:text-sm leading-loose tracking-[0.4em] uppercase font-light">
-                      You are cordially invited to
-                    </h3>
+
                     <p className="font-playball text-theme-600 text-3xl md:text-5xl mt-3 md:mt-5 capitalize tracking-wide drop-shadow-sm">
                       Celebrate the Union of
                     </p>
@@ -1291,6 +1287,36 @@ export default function WeddingInvitation() {
                   </motion.div>
                 </div>
 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col items-center justify-center text-center mt-8 md:mt-12 mb-4 px-4 z-10 w-full"
+                >
+                  {guestName && (
+                    <h3 className="font-playball text-theme-900 text-3xl md:text-4xl mb-4 tracking-normal capitalize">
+                      Dear {guestPrefix} {guestName},
+                    </h3>
+                  )}
+                  <div className="relative flex flex-col items-center text-center mt-6 w-full px-4">
+                    <div className="flex items-center justify-center w-full max-w-[280px] md:max-w-md gap-4 md:gap-6 opacity-70 mb-5">
+                      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-theme-400" />
+                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 rotate-45 bg-theme-500" />
+                      <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-theme-400" />
+                    </div>
+                    
+                    <h3 className="font-cinzel text-transparent bg-clip-text bg-gradient-to-r from-theme-700 via-theme-950 to-theme-700 text-[10px] md:text-sm leading-loose tracking-[0.35em] md:tracking-[0.5em] uppercase font-semibold px-2 drop-shadow-sm">
+                      You are cordially invited to our <br className="sm:hidden" /> homecoming celebration
+                    </h3>
+                    
+                    <div className="flex items-center justify-center w-full max-w-[280px] md:max-w-md gap-4 md:gap-6 opacity-70 mt-5">
+                      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-theme-400" />
+                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 rotate-45 bg-theme-500" />
+                      <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-theme-400" />
+                    </div>
+                  </div>
+                </motion.div>
+
                 {/* Date & Time Luxury Layout */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -1305,7 +1331,7 @@ export default function WeddingInvitation() {
                     <div className="flex flex-col items-center flex-1">
                       <Calendar className="w-6 h-6 md:w-8 md:h-8 text-theme-500 mb-4 opacity-80" />
                       <p className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-theme-600 font-bold mb-3">The Date</p>
-                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">2026.09.25</p>
+                      <p className="font-cinzel text-xl md:text-3xl text-theme-900 tracking-widest font-bold whitespace-nowrap">25.09.2026</p>
                       <p className="font-cinzel text-lg md:text-xl text-theme-600 tracking-[0.3em] font-normal mt-2">FRIDAY</p>
                     </div>
 
