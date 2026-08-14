@@ -9,7 +9,7 @@ import { Sparkles, MapPin, Calendar, Clock, Heart, Stars, BookHeart, PartyPopper
  * Accents: Silver
  */
 
-const backgroundMusic = "/Jim Brickman - The Gift ft. Collin Raye, Susan Ashton (Lyrics) [Vgt-WiimkYI] (1).mp3";
+const backgroundMusic = "/Lionel Richie Diana Ross Endless Love 1982 (Audio Remastered)(mp3j.cc).mp3";
 
 const flowerImage = "/silver_orchid.png";
 const flowerCornerImage = "/silver_orchid_corner.png";
